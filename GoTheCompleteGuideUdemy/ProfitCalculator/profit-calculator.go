@@ -1,43 +1,45 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+	"os"
+)
+
+const ResultFileName = "results.txt"
 
 func main() {
-	var revenue float64
-	var expenses float64
-	var taxRate float64
+	revenue, errorRevenue := getUserInput("Revenue: ")
+	expenses, errorExpenses := getUserInput("Expenses: ")
+	taxRate, errorTaxRate := getUserInput("Tax Rate: ")
 
-	collectInput("Revenue: ", &revenue)
-	//fmt.Print("Revenue: ")
-	//fmt.Scan(&revenue)
+	if errorRevenue != nil || errorExpenses != nil || errorTaxRate != nil {
+		fmt.Println("Value must be a positive number")
+		return
+	}
 
-	collectInput("Expenses: ", &expenses)
-	//fmt.Print("Expenses: ")
-	//fmt.Scan(&expenses)
+	ebt, profit, ratio := calculateFinancials(revenue, expenses, taxRate)
 
-	collectInput("Tax Rate: ", &taxRate)
-	//fmt.Print("Tax Rate: ")
-	//fmt.Scan(&taxRate)
-
-	earningsBeforeTax, profit, ratio := calculateProfit(revenue, expenses, taxRate)
-	// earningsBeforeTax := revenue - expenses
-	// profit := earningsBeforeTax - (earningsBeforeTax * (taxRate / 100))
-	// ratio := earningsBeforeTax / profit
-
-	fmt.Printf("Earnings Before Tax: %.2f\n", earningsBeforeTax)
-	fmt.Printf("Profit: %.2f\n", profit)
-	fmt.Printf("Ratio: %.2f\n", ratio)
+	fmt.Printf("%.1f\n", ebt)
+	fmt.Printf("%.1f\n", profit)
+	fmt.Printf("%.3f\n", ratio)
 }
 
-func collectInput(text string, value *float64) {
-	fmt.Print(text)
-	fmt.Scan(value)
-}
-
-func calculateProfit(revenue, expenses, taxRate float64) (ebt float64, profit float64, ratio float64) {
-	ebt = revenue - expenses
-	profit = ebt - (ebt * (taxRate / 100))
-	ratio = ebt / profit
-
+func calculateFinancials(revenue, expenses, taxRate float64) (float64, float64, float64) {
+	ebt := revenue - expenses
+	profit := ebt * (1 - taxRate/100)
+	ratio := ebt / profit
+	os.WriteFile(ResultFileName, []byte(fmt.Sprintf("EBT: %.1f, Profit: %.1f, Ratio: %.3f", ebt, profit, ratio)), 0644)
 	return ebt, profit, ratio
+}
+
+func getUserInput(infoText string) (float64, error) {
+	var userInput float64
+	fmt.Print(infoText)
+	fmt.Scan(&userInput)
+
+	if userInput <= 0 {
+		return 0, errors.New("Invalid input")
+	}
+	return userInput, nil
 }
