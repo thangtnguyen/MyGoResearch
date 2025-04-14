@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+PRODID:-//Microsoft Reactor//NONSGML Reactor Web//EN
+X-WR-CALNAME:Microsoft Reactor
+BEGIN:VEVENT
+UID:cd4d5679-fdb5-45b4-a931-496f67a66b01@Reactor
+SUMMARY:Microsoft Reactor event: Learn Live: Orchestrate a multi-agent solution using Semantic Kernel
+DTSTAMP:20250414T011924Z
+DTSTART:20250513T173000Z
+DTEND:20250513T183000Z
+LOCATION:https://developer.microsoft.com/en-us/reactor/events/25444/
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE HTML PUBLIC \"- //W3C//DTD HTML 3.2 //EN\"><html><body>We look forward to seeing you soon at this Reactor event.<br /><br />Please note that the event start time may appear in the timezone where the event will be hosted.<br /><br /><strong>Start Time:</strong> 2025-05-14 12:30 AM Bangkok, Hanoi, Jakarta<br /><strong>Format:</strong> Livestream<br /><br /><strong>Join live Event:</strong><br />Please note the livestream link will be live 10 minutes prior to the start of the event.<br /> <a href="https://developer.microsoft.com/en-us/reactor/events/25444/">https://developer.microsoft.com/en-us/reactor/events/25444/</a><br /><br />Learn Live: Orchestrate a multi-agent solution using Semantic Kernel<br /><br />Learn how to use the Semantic Kernel SDK to develop your own AI agents that can collaborate for a multi-agent solution.&#xA;Learning objectives&#xA;By the end of this module, you&#x27;ll be able to:&#xA;Build AI agents using the Semantic Kernel SDK&#xA;Develop multi-agent solutions&#xA;Create custom selection and termination strategies for agent collaboration&#xA;Follow along with the content&#xA;Orchestrate a multi-agent solution using Semantic Kernel&#xA;Explore more resources&#xA;Build secure and responsible AI solutions and manage generative AI lifecycles&#xA;Create agentic AI solutions by using Azure AI Foundry&#xA;Practical Foundation for AI Agents: A Developer&#x27;s Guide on Azure AI Foundry, Apps, and Data&#xA;</body></html>
+DESCRIPTION:We look forward to seeing you soon at this Reactor event. \n\n Please note that the event start time may appear in the timezone where the event will be hosted. \n\n Start Time: 2025-05-14 12:30 AM Bangkok, Hanoi, Jakarta \n Format: Livestream \n\n Join live Event: https://developer.microsoft.com/en-us/reactor/events/25444/ \n\n Learn Live: Orchestrate a multi-agent solution using Semantic Kernel \n\n Learn how to use the Semantic Kernel SDK to develop your own AI agents that can collaborate for a multi-agent solution.&#xA;Learning objectives&#xA;By the end of this module, you&#x27;ll be able to:&#xA;Build AI agents using the Semantic Kernel SDK&#xA;Develop multi-agent solutions&#xA;Create custom selection and termination strategies for agent collaboration&#xA;Follow along with the content&#xA;Orchestrate a multi-agent solution using Semantic Kernel&#xA;Explore more resources&#xA;Build secure and responsible AI solutions and manage generative AI lifecycles&#xA;Create agentic AI solutions by using Azure AI Foundry&#xA;Practical Foundation for AI Agents: A Developer&#x27;s Guide on Azure AI Foundry, Apps, and Data&#xA;
+BEGIN:VALARM
+TRIGGER:-PT30M
+DESCRIPTION:Reminder
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR
